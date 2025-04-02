@@ -118,7 +118,7 @@ public class formulario extends AppCompatActivity {
         if (cbTenis.isChecked()){
             deporteFavorito.append("Tenis, ");
         }
-        if (cbTenis.isChecked()){
+        if (cbTenisMesa.isChecked()){
             deporteFavorito.append("Tenis de mesa, ");
         }
         if (cbVolleyball.isChecked()){

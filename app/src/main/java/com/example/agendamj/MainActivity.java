@@ -45,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         bt2Modificar.setOnClickListener(v -> {
             Intent intento2 = new Intent(this, Buscar.class);
-            startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
             intento2.putExtra("ArrayUsuarios", usuarios);
+            startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
+
         });
     }
 

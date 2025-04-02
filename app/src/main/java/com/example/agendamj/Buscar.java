@@ -82,7 +82,7 @@ public class Buscar extends AppCompatActivity {
                 edtEmail.setText(U.getEmail());
                 edtTelefono.setText(String.valueOf(U.getTelefono()));
 
-                String nivelEducacion = U.nivelEducativo;
+                String nivelEducacion = U.getNivelEducativo();
                 if (nivelEducacion.equalsIgnoreCase("Primaria")) rbPrimaria.setChecked(true);
                 else if (nivelEducacion.equalsIgnoreCase("Secundaria")) rbSecundaria.setChecked(true);
                 else if (nivelEducacion.equalsIgnoreCase("Bachillerato")) rbBachillerato.setChecked(true);

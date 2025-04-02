@@ -8,15 +8,22 @@
     tools:context=".Buscar">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvTitulo2"
@@ -27,6 +34,246 @@
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="40sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Buscar por ID"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="documento" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="?android:attr/listDivider" />
+
+            <EditText
+                android:id="@+id/edt7"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Nombre" />
+
+            <EditText
+                android:id="@+id/edt8"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Apellido" />
+
+            <EditText
+                android:id="@+id/edt9"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="Edad" />
+
+            <EditText
+                android:id="@+id/edt10"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/edt11"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Teléfono" />
+
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="left"
+                android:text="Información académica"
+                android:textColor="@android:color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Nivel Educativo"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Primaria" />
+
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Secundaria" />
+
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bachillerato" />
+
+                <RadioButton
+                    android:id="@+id/rb4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tenico/Tecnólogo" />
+
+                <RadioButton
+                    android:id="@+id/rb5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profesional" />
+
+            </RadioGroup>
+
+            <RadioButton
+                android:id="@+id/rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Primaria" />
+
+            <RadioButton
+                android:id="@+id/rb6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Secundaria" />
+
+            <RadioButton
+                android:id="@+id/rb7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bachillerato" />
+
+            <RadioButton
+                android:id="@+id/rb8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tenico/Tecnólogo" />
+
+            <RadioButton
+                android:id="@+id/rb9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profesional" />
+
+            <TextView
+                android:id="@+id/tv10"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="left"
+                android:text="Genero musical Preferido"
+                android:textColor="@android:color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Puedes escoger 1 o varios"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:id="@+id/c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salsa" />
+
+            <CheckBox
+                android:id="@+id/c11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regueatón" />
+
+            <CheckBox
+                android:id="@+id/c12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bachata" />
+
+            <CheckBox
+                android:id="@+id/c13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vallenato" />
+
+            <CheckBox
+                android:id="@+id/c14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Otro" />
+
+            <TextView
+                android:id="@+id/tv12"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:gravity="left"
+                android:text="Deporte preferido"
+                android:textColor="@android:color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/c15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fútbol" />
+
+            <CheckBox
+                android:id="@+id/c16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basquetball" />
+
+            <CheckBox
+                android:id="@+id/c17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tenis" />
+
+            <CheckBox
+                android:id="@+id/c18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tenis de mesa" />
+
+            <CheckBox
+                android:id="@+id/c19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volleyball" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

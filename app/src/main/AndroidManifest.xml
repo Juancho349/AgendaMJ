@@ -13,8 +13,11 @@
         android:theme="@style/Theme.AgendaMJ"
         tools:targetApi="31">
         <activity
+            android:name=".Buscar"
+            android:exported="false" />
+        <activity
             android:name=".formulario"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Calculadora"
             android:exported="false" />

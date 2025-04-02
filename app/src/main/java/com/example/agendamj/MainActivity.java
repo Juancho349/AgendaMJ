@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         bt1Agregar = findViewById(R.id.bt1);
-        bt2Modificar = findViewById(R.id.bt1);
+        bt2Modificar = findViewById(R.id.bt2);
         bt3Calculadora = findViewById(R.id.bt3);
 
         bt1Agregar.setOnClickListener(v -> {

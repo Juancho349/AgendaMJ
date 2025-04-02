@@ -3,6 +3,7 @@ package com.example.agendamj;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -76,10 +77,7 @@ public class formulario extends AppCompatActivity {
         cbTenisMesa = findViewById(R.id.c9);
         cbVolleyball = findViewById(R.id.c10);
 
-        bt1.setOnClickListener(v -> {
-            enviar();
 
-        });
     }
 
     private String obtenerGeneroMusical(){
@@ -153,7 +151,7 @@ public class formulario extends AppCompatActivity {
     }
 
 
-    private void enviar(){
+    public void enviar(View view){
         String nombre = edtNombre.getText().toString();
         String apellido = edtApellido.getText().toString();
         int edad = Integer.parseInt(edtEdad.getText().toString());

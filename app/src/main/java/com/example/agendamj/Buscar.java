@@ -1,6 +1,7 @@
 package com.example.agendamj;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -70,7 +71,7 @@ public class Buscar extends AppCompatActivity {
 
     }
 
-    public void buscarUsuario (){
+    public void buscarUsuario (View view){
         ArrayList<Usuario> usuarios = (ArrayList<Usuario>)getIntent().getSerializableExtra("ArrayUsuarios");
         int codigoBuscar = Integer.parseInt(edtDocumento.getText().toString());
         for (Usuario U : usuarios){

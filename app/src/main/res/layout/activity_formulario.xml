@@ -48,48 +48,49 @@
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
+                android:hint="documento"
                 android:inputType="number"
-                android:text="documento" />
+                android:onClick="enviar" />
 
             <EditText
                 android:id="@+id/edt1"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Nombre" />
+                android:hint="Nombre"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/edt2"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Apellido" />
+                android:hint="Apellido"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/edt3"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
-                android:inputType="number"
-                android:text="Edad" />
+                android:hint="Edad"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/edt4"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Email" />
+                android:hint="Email"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/edt6"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Teléfono" />
+                android:hint="Teléfono"
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/tv2"

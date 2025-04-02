@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -96,7 +97,7 @@ public class formulario extends AppCompatActivity {
             generosSeleccionados.append("Vallenato, ");
         }
         if (cbOtro.isChecked()) {
-            generosSeleccionados.append("Otro, ");
+            generosSeleccionados.append("Otro");
         }
         //eliminamos la coma con este recorrido
         if (generosSeleccionados.length() > 0) {
@@ -110,7 +111,7 @@ public class formulario extends AppCompatActivity {
     private String  obtenerDeporteFavorito(){
         StringBuilder deporteFavorito = new StringBuilder();
         if (cbFutbol.isChecked()){
-            deporteFavorito.append("Fubol, ");
+            deporteFavorito.append("Futbol, ");
         }
         if (cbBasquetball.isChecked()){
             deporteFavorito.append("Basquetball, ");
@@ -122,7 +123,7 @@ public class formulario extends AppCompatActivity {
             deporteFavorito.append("Tenis de mesa, ");
         }
         if (cbVolleyball.isChecked()){
-            deporteFavorito.append("Volleybal, ");
+            deporteFavorito.append("Volleybal");
         }
         if (deporteFavorito.length() > 0) {
             deporteFavorito.setLength(deporteFavorito.length() - 2);
@@ -175,6 +176,8 @@ public class formulario extends AppCompatActivity {
         intento1.putExtra("generoMusical", generoMusical);
         intento1.putExtra("deporteFavorito", deporteFavorito);
         setResult(Activity.RESULT_OK, intento1);
+
+        Toast.makeText(this, "Usuario creado con ID: " + id, Toast.LENGTH_SHORT).show();
         finish();
     }
 

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -92,15 +93,15 @@ public class Buscar extends AppCompatActivity {
                 else if (nivelEducacion.equalsIgnoreCase("Profesional")) rbProfesional.setChecked(true);
 
                 String generosMusicales = U.getGeneroMusicalPreferido();
-                List<String> generosMusicalesLista = Arrays.asList(generosMusicales.split(","));
+                List<String> generosMusicalesLista = Arrays.asList(generosMusicales.split(", "));
                 cbSalsa.setChecked(generosMusicalesLista.contains("Salsa"));
-                cbReggaeton.setChecked(generosMusicales.contains("Reggaeton"));
-                cbBachata.setChecked(generosMusicales.contains("Bachata"));
-                cbVallenato.setChecked(generosMusicales.contains("Vallenato"));
-                cbOtro.setChecked(generosMusicales.contains("Otro"));
+                cbReggaeton.setChecked(generosMusicalesLista.contains("Reggaeton"));
+                cbBachata.setChecked(generosMusicalesLista.contains("Bachata"));
+                cbVallenato.setChecked(generosMusicalesLista.contains("Vallenato"));
+                cbOtro.setChecked(generosMusicalesLista.contains("Otro"));
 
                 String deportesFavoritos = U.getDeporteFavorito();
-                List<String> deportesFavoritosLista = Arrays.asList(deportesFavoritos.split(","));
+                List<String> deportesFavoritosLista = Arrays.asList(deportesFavoritos.split(", "));
                 cbFutbol.setChecked(deportesFavoritosLista.contains("Futbol"));
                 cbBasquetball.setChecked(deportesFavoritosLista.contains("Basquetball"));
                 cbTenis.setChecked(deportesFavoritosLista.contains("Tenis"));
@@ -139,7 +140,7 @@ public class Buscar extends AppCompatActivity {
     private String  obtenerDeporteFavorito(){
         StringBuilder deporteFavorito = new StringBuilder();
         if (cbFutbol.isChecked()){
-            deporteFavorito.append("Fubol, ");
+            deporteFavorito.append("Futbol, ");
         }
         if (cbBasquetball.isChecked()){
             deporteFavorito.append("Basquetball, ");
@@ -200,6 +201,7 @@ public class Buscar extends AppCompatActivity {
         intento1.putExtra("generoMusical", generoMusical);
         intento1.putExtra("deporteFavorito", deporteFavorito);
         setResult(Activity.RESULT_OK, intento1);
+        Toast.makeText(this, "Usuario actualizado con ID: " + id, Toast.LENGTH_SHORT).show();
         finish();
     }
 }

@@ -56,8 +56,8 @@
                     android:layout_height="61dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="number"
-                    android:text="documento" />
+                    android:hint="documento"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/b5"

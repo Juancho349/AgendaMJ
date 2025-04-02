@@ -38,6 +38,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginBottom="231dp"
         android:backgroundTint="#233B94"
+        android:onClick="usarCalculadora"
         android:text="Calculadora"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/bt2"

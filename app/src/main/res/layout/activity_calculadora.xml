@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Calculadora">
+    <TextView
+        android:id="@+id/textOperacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="160dp"
+        android:textColor="#9D9696"
+        android:textSize="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/Bt1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="9"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#673AB7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt2"
+        app:layout_constraintEnd_toStartOf="@+id/Bt2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Bt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="49dp"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="8"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/Bt10"
+        app:layout_constraintEnd_toStartOf="@+id/Bt3"
+        app:layout_constraintStart_toEndOf="@+id/Bt1" />
+
+    <Button
+        android:id="@+id/Bt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="7"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/Bt4"
+        app:layout_constraintStart_toEndOf="@+id/Bt2"
+        app:layout_constraintTop_toTopOf="@+id/Bt2" />
+
+    <Button
+        android:id="@+id/Bt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="6"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt6"
+        app:layout_constraintEnd_toStartOf="@+id/Bt6"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Bt6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="5"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/Bt7"
+        app:layout_constraintStart_toEndOf="@+id/Bt5"
+        app:layout_constraintTop_toBottomOf="@+id/Bt1" />
+
+    <Button
+        android:id="@+id/Bt7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="4"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt6"
+        app:layout_constraintEnd_toStartOf="@+id/Bt8"
+        app:layout_constraintStart_toEndOf="@+id/Bt6" />
+
+    <Button
+        android:id="@+id/Bt9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="3"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Bt10"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Bt10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="2"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt11"
+        app:layout_constraintEnd_toStartOf="@+id/Bt11"
+        app:layout_constraintStart_toEndOf="@+id/Bt9" />
+
+    <Button
+        android:id="@+id/Bt11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="1"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/Bt12"
+        app:layout_constraintStart_toEndOf="@+id/Bt10"
+        app:layout_constraintTop_toBottomOf="@+id/Bt8" />
+
+    <Button
+        android:id="@+id/Bt13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarOperador"
+        android:text="+"
+        android:textColor="#FF9800"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt14"
+        app:layout_constraintEnd_toStartOf="@+id/Bt14"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Bt14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/Bt15"
+        app:layout_constraintStart_toEndOf="@+id/Bt13"
+        app:layout_constraintTop_toBottomOf="@+id/Bt9" />
+
+    <Button
+        android:id="@+id/Bt15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:backgroundTint="#717070"
+        android:onClick="asignarNumero"
+        android:text="."
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt14"
+        app:layout_constraintEnd_toStartOf="@+id/Bt16"
+        app:layout_constraintStart_toEndOf="@+id/Bt14" />
+
+    <Button
+        android:id="@+id/Bt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:backgroundTint="#717070"
+        android:onClick="borrarGeneral"
+        android:text="Del"
+        android:textColor="#FF9800"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Bt3" />
+
+    <Button
+        android:id="@+id/Bt8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#717070"
+        android:onClick="asignarOperador"
+        android:text="/"
+        android:textColor="#FF9800"
+        app:layout_constraintBottom_toTopOf="@+id/Bt15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Bt7" />
+
+    <Button
+        android:id="@+id/Bt12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#717070"
+        android:onClick="asignarOperador"
+        android:text="x"
+        android:textColor="#FF9800"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Bt11" />
+
+    <Button
+        android:id="@+id/Bt16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#717070"
+        android:onClick="calcular"
+        android:text="="
+        android:textColor="#FF9800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Bt15"
+        app:layout_constraintTop_toBottomOf="@+id/Bt12" />
+
+    <TextView
+        android:id="@+id/TextResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="72dp"
+        android:textColor="#FFFFFF"
+        android:textSize="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/Bt1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="asignarOperador"
+        android:text="-"
+        android:textColor="#FF9800"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Bt15"
+        app:layout_constraintEnd_toEndOf="@+id/Bt12" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#717070"
+        android:onClick="borrarUltimoDigito"
+        android:text="⌫"
+        android:textColor="#FF9800"
+        app:layout_constraintBottom_toTopOf="@+id/Bt4"
+        app:layout_constraintEnd_toEndOf="@+id/Bt4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

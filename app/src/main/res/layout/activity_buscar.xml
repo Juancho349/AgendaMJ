@@ -45,13 +45,27 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edt"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="61dp"
-                android:ems="10"
-                android:inputType="number"
-                android:text="documento" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt12"
+                    android:layout_width="30dp"
+                    android:layout_height="61dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="documento" />
+
+                <Button
+                    android:id="@+id/b5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Buscar" />
+            </LinearLayout>
 
             <View
                 android:id="@+id/divider"
@@ -273,6 +287,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Volleyball" />
+
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actualizar" />
 
         </LinearLayout>
     </ScrollView>

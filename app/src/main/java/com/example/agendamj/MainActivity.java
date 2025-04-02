@@ -1,5 +1,6 @@
 package com.example.agendamj;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.media3.common.util.Log;
 
 import java.util.ArrayList;
 
@@ -42,16 +44,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE_FORMULARIO){
-            if (resultCode == RESULT_OK){
+
+        if (requestCode == REQUEST_CODE_FORMULARIO && resultCode == Activity.RESULT_OK) {
+            if (data != null && data.getExtras() != null) {
                 Bundle datos = data.getExtras();
+
                 int id = datos.getInt("documento");
                 String nombre = datos.getString("nombre");
                 String apellido = datos.getString("apellido");
-                int edad = datos.getInt("edad");
+                int edad = datos.getInt("edad", 0);
                 String email = datos.getString("email");
                 int telefono = datos.getInt("telefono");
                 String nivelEducativo = datos.getString("nivelEducativo");
@@ -59,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 String deporteFavorito = datos.getString("deporteFavorito");
 
                 Usuario usuario = new Usuario(id, nombre, apellido, edad, email, telefono, nivelEducativo, generoMusical, deporteFavorito);
-
                 usuarios.add(usuario);
-
             }
         }
     }

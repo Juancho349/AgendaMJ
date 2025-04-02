@@ -45,33 +45,49 @@ public class MainActivity extends AppCompatActivity {
 
         bt2Modificar.setOnClickListener(v -> {
             Intent intento2 = new Intent(this, Buscar.class);
-            startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
             intento2.putExtra("ArrayUsuarios", usuarios);
+            startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
+
         });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_CODE_FORMULARIO && resultCode == Activity.RESULT_OK) {
-            if (data != null && data.getExtras() != null) {
-                Bundle datos = data.getExtras();
+        if (resultCode == Activity.RESULT_OK && data != null & data.getExtras() != null){
+            Bundle datos = data.getExtras();
 
-                int id = datos.getInt("documento");
-                String tipoDocumento = datos.getString("tipoDocumento");
-                String nombre = datos.getString("nombre");
-                String apellido = datos.getString("apellido");
-                int edad = datos.getInt("edad", 0);
-                String email = datos.getString("email");
-                int telefono = datos.getInt("telefono");
-                String nivelEducativo = datos.getString("nivelEducativo");
-                String generoMusical = datos.getString("generoMusical");
-                String deporteFavorito = datos.getString("deporteFavorito");
+            int id = datos.getInt("documento");
+            String tipoDocumento = datos.getString("tipoDocumento");
+            String nombre = datos.getString("nombre");
+            String apellido = datos.getString("apellido");
+            int edad = datos.getInt("edad", 0);
+            String email = datos.getString("email");
+            int telefono = datos.getInt("telefono");
+            String nivelEducativo = datos.getString("nivelEducativo");
+            String generoMusical = datos.getString("generoMusical");
+            String deporteFavorito = datos.getString("deporteFavorito");
 
-                Usuario usuario = new Usuario(id,tipoDocumento, nombre, apellido, edad, email, telefono, nivelEducativo, generoMusical, deporteFavorito);
+            Usuario usuario = new Usuario(id,tipoDocumento, nombre, apellido, edad, email, telefono, nivelEducativo, generoMusical, deporteFavorito);
+            if(requestCode == REQUEST_CODE_FORMULARIO){
                 usuarios.add(usuario);
+            } else if (requestCode == REQUEST_CODE_MODIFICAR_USUARIO) {
+                for (Usuario u : usuarios) {
+                    if (u.getId() == id) {
+                        u.setNombre(nombre);
+                        u.setApellido(apellido);
+                        u.setEdad(edad);
+                        u.setEmail(email);
+                        u.setTelefono(telefono);
+                        u.setNivelEducativo(nivelEducativo);
+                        u.setGeneroMusicalPreferido(generoMusical);
+                        u.setDeporteFavorito(deporteFavorito);
+                        break;
+                    }
+                }
             }
         }
+
     }
 
     public void usarCalculadora(View v){

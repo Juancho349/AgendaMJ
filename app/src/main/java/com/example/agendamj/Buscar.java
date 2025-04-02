@@ -1,5 +1,7 @@
 package com.example.agendamj;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -82,7 +84,7 @@ public class Buscar extends AppCompatActivity {
                 edtEmail.setText(U.getEmail());
                 edtTelefono.setText(String.valueOf(U.getTelefono()));
 
-                String nivelEducacion = U.nivelEducativo;
+                String nivelEducacion = U.getNivelEducativo();
                 if (nivelEducacion.equalsIgnoreCase("Primaria")) rbPrimaria.setChecked(true);
                 else if (nivelEducacion.equalsIgnoreCase("Secundaria")) rbSecundaria.setChecked(true);
                 else if (nivelEducacion.equalsIgnoreCase("Bachillerato")) rbBachillerato.setChecked(true);
@@ -106,5 +108,98 @@ public class Buscar extends AppCompatActivity {
                 cbVolleyball.setChecked(deportesFavoritosLista.contains("Volleybal"));
             }
         }
+    }
+    private String obtenerGeneroMusical(){
+        StringBuilder generosSeleccionados = new StringBuilder();
+
+        if (cbSalsa.isChecked()) {
+            generosSeleccionados.append("Salsa, ");
+        }
+        if (cbReggaeton.isChecked()) {
+            generosSeleccionados.append("Reggaeton, ");
+        }
+        if (cbBachata.isChecked()) {
+            generosSeleccionados.append("Bachata, ");
+        }
+        if (cbVallenato.isChecked()) {
+            generosSeleccionados.append("Vallenato, ");
+        }
+        if (cbOtro.isChecked()) {
+            generosSeleccionados.append("Otro, ");
+        }
+        //eliminamos la coma con este recorrido
+        if (generosSeleccionados.length() > 0) {
+            generosSeleccionados.setLength(generosSeleccionados.length() - 2);
+        }
+
+        return generosSeleccionados.toString();
+
+    }
+
+    private String  obtenerDeporteFavorito(){
+        StringBuilder deporteFavorito = new StringBuilder();
+        if (cbFutbol.isChecked()){
+            deporteFavorito.append("Fubol, ");
+        }
+        if (cbBasquetball.isChecked()){
+            deporteFavorito.append("Basquetball, ");
+        }
+        if (cbTenis.isChecked()){
+            deporteFavorito.append("Tenis, ");
+        }
+        if (cbTenisMesa.isChecked()){
+            deporteFavorito.append("Tenis de mesa, ");
+        }
+        if (cbVolleyball.isChecked()){
+            deporteFavorito.append("Volleybal, ");
+        }
+        if (deporteFavorito.length() > 0) {
+            deporteFavorito.setLength(deporteFavorito.length() - 2);
+        }
+        return deporteFavorito.toString();
+    }
+
+    private String obtenerNivelEducativo(){
+        String nivelEducativo = "";
+        if (rbPrimaria.isChecked()){
+            nivelEducativo += "Primaria";
+        }
+        if (rbSecundaria.isChecked()){
+            nivelEducativo += "Secundaria";
+        }
+        if (rbBachillerato.isChecked()){
+            nivelEducativo += "Bachillerato";
+        }
+        if (rbTecnico.isChecked()){
+            nivelEducativo += "Tecnico/Tecnólogo";
+        }
+        if (rbProfesional.isChecked()){
+            nivelEducativo += "Profesional";
+        }
+        return nivelEducativo;
+    }
+    public void actualizar(View view){
+        String nombre = edtNombre.getText().toString();
+        String apellido = edtApellido.getText().toString();
+        int edad = Integer.parseInt(edtEdad.getText().toString());
+        String email = edtEmail.getText().toString();
+        int telefono = Integer.parseInt(edtTelefono.getText().toString());
+        int id = Integer.parseInt(edtDocumento.getText().toString());
+        String nivelEducativo = obtenerNivelEducativo();
+        String generoMusical = obtenerGeneroMusical();
+        String deporteFavorito = obtenerDeporteFavorito();
+
+        Intent intento1 = new Intent();
+        intento1.putExtra("nombre", nombre);
+        intento1.putExtra("apellido", apellido);
+        intento1.putExtra("edad", edad);
+        intento1.putExtra("email", email);
+        intento1.putExtra("telefono",telefono);
+        intento1.putExtra("documento", id);
+        intento1.putExtra("nivelEducativo", nivelEducativo);
+        intento1.putExtra("generoMusical", generoMusical);
+        intento1.putExtra("deporteFavorito", deporteFavorito);
+        setResult(Activity.RESULT_OK, intento1);
+        finish();
     }
 }

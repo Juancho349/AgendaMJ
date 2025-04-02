@@ -1,6 +1,7 @@
 package com.example.agendamj;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button bt1, bt2, bt3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,4 +24,5 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+    
 }

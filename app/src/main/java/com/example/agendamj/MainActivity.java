@@ -42,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intento1 = new Intent(this, formulario.class);
             startActivityForResult(intento1, REQUEST_CODE_FORMULARIO);
         });
+
+        bt2Modificar.setOnClickListener(v -> {
+            Intent intento2 = new Intent(this, Buscar.class);
+            startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
+            intento2.putExtra("ArrayUsuarios", usuarios);
+        });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -52,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle datos = data.getExtras();
 
                 int id = datos.getInt("documento");
+                String tipoDocumento = datos.getString("tipoDocumento");
                 String nombre = datos.getString("nombre");
                 String apellido = datos.getString("apellido");
                 int edad = datos.getInt("edad", 0);
@@ -61,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 String generoMusical = datos.getString("generoMusical");
                 String deporteFavorito = datos.getString("deporteFavorito");
 
-                Usuario usuario = new Usuario(id, nombre, apellido, edad, email, telefono, nivelEducativo, generoMusical, deporteFavorito);
+                Usuario usuario = new Usuario(id,tipoDocumento, nombre, apellido, edad, email, telefono, nivelEducativo, generoMusical, deporteFavorito);
                 usuarios.add(usuario);
             }
         }

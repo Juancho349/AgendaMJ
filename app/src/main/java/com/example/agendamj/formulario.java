@@ -3,13 +3,11 @@ package com.example.agendamj;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
@@ -91,7 +89,7 @@ public class formulario extends AppCompatActivity {
             generosSeleccionados.append("Salsa, ");
         }
         if (cbReggaeton.isChecked()) {
-            generosSeleccionados.append("Reggaetón, ");
+            generosSeleccionados.append("Reggaeton, ");
         }
         if (cbBachata.isChecked()) {
             generosSeleccionados.append("Bachata, ");
@@ -112,25 +110,48 @@ public class formulario extends AppCompatActivity {
     }
 
     private String  obtenerDeporteFavorito(){
-        String deporteFavorito = "";
+        StringBuilder deporteFavorito = new StringBuilder();
         if (cbFutbol.isChecked()){
-            deporteFavorito += "futbol";
+            deporteFavorito.append("Fubol, ");
         }
         if (cbBasquetball.isChecked()){
-            deporteFavorito += "Basquetball";
+            deporteFavorito.append("Basquetball, ");
         }
         if (cbTenis.isChecked()){
-            deporteFavorito += "Tenis";
+            deporteFavorito.append("Tenis, ");
         }
         if (cbTenis.isChecked()){
-            deporteFavorito += "Tenis de mesa";
+            deporteFavorito.append("Tenis de mesa, ");
         }
         if (cbVolleyball.isChecked()){
-            deporteFavorito += "Volleybal";
+            deporteFavorito.append("Volleybal, ");
         }
-
-        return deporteFavorito;
+        if (deporteFavorito.length() > 0) {
+            deporteFavorito.setLength(deporteFavorito.length() - 2);
+        }
+        return deporteFavorito.toString();
     }
+
+    private String obtenerNivelEducativo(){
+        String nivelEducativo = "";
+        if (rbPrimaria.isChecked()){
+            nivelEducativo += "Primaria";
+        }
+        if (rbSecundaria.isChecked()){
+            nivelEducativo += "Secundaria";
+        }
+        if (rbBachillerato.isChecked()){
+            nivelEducativo += "Bachillerato";
+        }
+        if (rbTecnico.isChecked()){
+            nivelEducativo += "Tecnico/Tecnólogo";
+        }
+        if (rbProfesional.isChecked()){
+            nivelEducativo += "Profesional";
+        }
+        return nivelEducativo;
+    }
+
 
     private void enviar(){
         String nombre = edtNombre.getText().toString();
@@ -139,7 +160,8 @@ public class formulario extends AppCompatActivity {
         String email = edtEmail.getText().toString();
         int telefono = Integer.parseInt(edtTelefono.getText().toString());
         int id = Integer.parseInt(edtDocumento.getText().toString());
-        String nivelEducativo = sp1.getSelectedItem().toString();
+        String tipoDocumento = sp1.getSelectedItem().toString();
+        String nivelEducativo = obtenerNivelEducativo();
         String generoMusical = obtenerGeneroMusical();
         String deporteFavorito = obtenerDeporteFavorito();
 
@@ -150,6 +172,7 @@ public class formulario extends AppCompatActivity {
         intento1.putExtra("email", email);
         intento1.putExtra("telefono",telefono);
         intento1.putExtra("documento", id);
+        intento1.putExtra("tipoDocumento", tipoDocumento);
         intento1.putExtra("nivelEducativo", nivelEducativo);
         intento1.putExtra("generoMusical", generoMusical);
         intento1.putExtra("deporteFavorito", deporteFavorito);

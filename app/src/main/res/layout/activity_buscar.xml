@@ -137,66 +137,36 @@
                 android:layout_height="match_parent">
 
                 <RadioButton
-                    android:id="@+id/rb1"
+                    android:id="@+id/rb6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Primaria" />
 
                 <RadioButton
-                    android:id="@+id/rb2"
+                    android:id="@+id/rb7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Secundaria" />
 
                 <RadioButton
-                    android:id="@+id/rb3"
+                    android:id="@+id/rb8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bachillerato" />
 
                 <RadioButton
-                    android:id="@+id/rb4"
+                    android:id="@+id/rb9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tenico/Tecnólogo" />
 
                 <RadioButton
-                    android:id="@+id/rb5"
+                    android:id="@+id/rb10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Profesional" />
 
             </RadioGroup>
-
-            <RadioButton
-                android:id="@+id/rb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Primaria" />
-
-            <RadioButton
-                android:id="@+id/rb6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Secundaria" />
-
-            <RadioButton
-                android:id="@+id/rb7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bachillerato" />
-
-            <RadioButton
-                android:id="@+id/rb8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tenico/Tecnólogo" />
-
-            <RadioButton
-                android:id="@+id/rb9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Profesional" />
 
             <TextView
                 android:id="@+id/tv10"
@@ -228,7 +198,7 @@
                 android:id="@+id/c11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Regueatón" />
+                android:text="Reggaeton" />
 
             <CheckBox
                 android:id="@+id/c12"

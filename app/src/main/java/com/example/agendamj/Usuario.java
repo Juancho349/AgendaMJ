@@ -1,7 +1,11 @@
 package com.example.agendamj;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
     int id;
+
+    String tipoDocumento;
     String nombre;
     String apellido;
     int edad;
@@ -11,8 +15,9 @@ public class Usuario {
     String generoMusicalPreferido;
     String deporteFavorito;
 
-    public Usuario(int id, String nombre, String apellido, int edad, String email, int telefono, String nivelEducativo, String generoMusicalPreferido, String deporteFavorito) {
+    public Usuario(int id, String tipoDocumento, String nombre, String apellido, int edad, String email, int telefono, String nivelEducativo, String generoMusicalPreferido, String deporteFavorito) {
         this.id = id;
+        this.tipoDocumento = tipoDocumento;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;

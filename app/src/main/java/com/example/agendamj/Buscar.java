@@ -140,7 +140,7 @@ public class Buscar extends AppCompatActivity {
     private String  obtenerDeporteFavorito(){
         StringBuilder deporteFavorito = new StringBuilder();
         if (cbFutbol.isChecked()){
-            deporteFavorito.append("Futbol, ");
+            deporteFavorito.append("Fu tbol, ");
         }
         if (cbBasquetball.isChecked()){
             deporteFavorito.append("Basquetball, ");

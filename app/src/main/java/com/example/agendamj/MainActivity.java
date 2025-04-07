@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt1Agregar, bt2Modificar, bt3Calculadora;
+    Button bt1Agregar, bt2Modificar, bt3Calculadora, btListar;
     private static final int REQUEST_CODE_FORMULARIO = 1;
     private static final int REQUEST_CODE_MODIFICAR_USUARIO = 2;
 
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         bt1Agregar = findViewById(R.id.bt1);
         bt2Modificar = findViewById(R.id.bt2);
         bt3Calculadora = findViewById(R.id.bt3);
+        btListar = findViewById(R.id.btListado);
 
         bt1Agregar.setOnClickListener(v -> {
             Intent intento1 = new Intent(this, formulario.class);
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
 
         });
+
+        btListar.setOnClickListener(v -> {
+            Intent intento4 = new Intent(this, Listado.class);
+            intento4.putExtra("ListadoUsuarios", usuarios);
+            startActivity(intento4);
+        });
+
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

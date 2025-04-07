@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Listado">
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="0dp"
+        android:layout_height="462dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="76dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCedula"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:text="Cedula" />
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="Nombre" />
+
+            <TextView
+                android:id="@+id/tvApellido"
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="Apellido" />
+
+            <TextView
+                android:id="@+id/tvEdad"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:text="Edad" />
+
+            <TextView
+                android:id="@+id/tvMail"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <TextView
+                android:id="@+id/tvTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telefono" />
+
+            <TextView
+                android:id="@+id/tvDeporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deporte Fav" />
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

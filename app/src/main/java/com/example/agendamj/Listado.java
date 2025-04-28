@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class Listado extends AppCompatActivity {
     TableLayout tablaUsuarios;
+    AdministradorSQLiteOpenHelper dbAdmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +27,13 @@ public class Listado extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        dbAdmin = new AdministradorSQLiteOpenHelper(this, "agenda", null, 1);
         tablaUsuarios = findViewById(R.id.tableLayout2);
         llenarTabla();
     }
 
     public void llenarTabla (){
-        ArrayList<Usuario> usuarios = (ArrayList<Usuario>) getIntent().getSerializableExtra("ListadoUsuarios");
+        ArrayList<Usuario> usuarios = dbAdmin.listadoUsuarios();
 
         for (Usuario u: usuarios){
             TableRow fila = new TableRow(this);

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Button bt1Agregar, bt2Modificar, bt3Calculadora, btListar;
     private static final int REQUEST_CODE_FORMULARIO = 1;
     private static final int REQUEST_CODE_MODIFICAR_USUARIO = 2;
-
+    AdministradorSQLiteOpenHelper dbAdmin;
     ArrayList<Usuario> usuarios = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         btListar.setOnClickListener(v -> {
             Intent intento4 = new Intent(this, Listado.class);
-            intento4.putExtra("ListadoUsuarios", usuarios);
             startActivity(intento4);
         });
 
-
+        dbAdmin = new AdministradorSQLiteOpenHelper(this, "agenda", null, 1);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -80,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             Usuario usuario = new Usuario(id,tipoDocumento, nombre, apellido, edad, email, telefono, nivelEducativo, generoMusical, deporteFavorito);
             if(requestCode == REQUEST_CODE_FORMULARIO){
                 usuarios.add(usuario);
+                dbAdmin.crear(usuario);//BASE DE DATOS NUEVA LINEA
             } else if (requestCode == REQUEST_CODE_MODIFICAR_USUARIO) {
                 for (Usuario u : usuarios) {
                     if (u.getId() == id) {
@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                 }
+                dbAdmin.actualizar(usuario); //ACTUALIZAR;
             }
         }
 

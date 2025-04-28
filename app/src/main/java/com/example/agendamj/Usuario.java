@@ -99,4 +99,8 @@ public class Usuario implements Serializable {
     public void setDeporteFavorito(String deporteFavorito) {
         this.deporteFavorito = deporteFavorito;
     }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
 }

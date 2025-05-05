@@ -26,9 +26,9 @@ public class Buscar extends AppCompatActivity {
     CheckBox cbSalsa, cbReggaeton, cbBachata, cbVallenato, cbOtro;
     CheckBox cbFutbol, cbBasquetball, cbTenis, cbTenisMesa, cbVolleyball;
     Button btBuscar, btActualizar;
+    AdministradorSQLiteOpenHelper dbAdmin;
 
-
-
+    String tipoDocumento = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,19 +71,22 @@ public class Buscar extends AppCompatActivity {
 
         btActualizar = findViewById(R.id.b6);
         btBuscar = findViewById(R.id.b5);
+        dbAdmin = new AdministradorSQLiteOpenHelper(this, "agenda", null, 1);
+
 
     }
 
     public void buscarUsuario (View view){
-        ArrayList<Usuario> usuarios = (ArrayList<Usuario>)getIntent().getSerializableExtra("ArrayUsuarios");
+
         int codigoBuscar = Integer.parseInt(edtDocumento.getText().toString());
-        for (Usuario U : usuarios){
+        for (Usuario U : dbAdmin.listadoUsuarios()){
             if (U.getId() == codigoBuscar){
                 edtNombre.setText(U.getNombre());
                 edtApellido.setText(U.getApellido());
                 edtEdad.setText(String.valueOf(U.getEdad()));
                 edtEmail.setText(U.getEmail());
                 edtTelefono.setText(String.valueOf(U.getTelefono()));
+                tipoDocumento = U.getTipoDocumento();
 
                 String nivelEducacion = U.getNivelEducativo();
                 if (nivelEducacion.equalsIgnoreCase("Primaria")) rbPrimaria.setChecked(true);
@@ -190,6 +193,7 @@ public class Buscar extends AppCompatActivity {
         String generoMusical = obtenerGeneroMusical();
         String deporteFavorito = obtenerDeporteFavorito();
 
+
         Intent intento1 = new Intent();
         intento1.putExtra("nombre", nombre);
         intento1.putExtra("apellido", apellido);
@@ -197,6 +201,7 @@ public class Buscar extends AppCompatActivity {
         intento1.putExtra("email", email);
         intento1.putExtra("telefono",telefono);
         intento1.putExtra("documento", id);
+        intento1.putExtra("tipoDocumento", tipoDocumento);
         intento1.putExtra("nivelEducativo", nivelEducativo);
         intento1.putExtra("generoMusical", generoMusical);
         intento1.putExtra("deporteFavorito", deporteFavorito);

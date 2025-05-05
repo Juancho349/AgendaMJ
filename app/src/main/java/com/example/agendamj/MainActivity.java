@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void respaldoDatos(){
         StringBuilder texto = new StringBuilder();
-        for (Usuario usuario : usuarios){
+        for (Usuario usuario : dbAdmin.listadoUsuarios()){
             texto.append("ID: ").append(usuario.getId()).append("\n");
             texto.append("Tipo de Documento: ").append(usuario.getTipoDocumento()).append("\n");
             texto.append("Nombre: ").append(usuario.getNombre()).append("\n");

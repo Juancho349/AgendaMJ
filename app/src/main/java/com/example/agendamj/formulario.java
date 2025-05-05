@@ -97,7 +97,7 @@ public class formulario extends AppCompatActivity {
             generosSeleccionados.append("Vallenato, ");
         }
         if (cbOtro.isChecked()) {
-            generosSeleccionados.append("Otro");
+            generosSeleccionados.append("Otro, ");
         }
         //eliminamos la coma con este recorrido
         if (generosSeleccionados.length() > 0) {
@@ -123,7 +123,7 @@ public class formulario extends AppCompatActivity {
             deporteFavorito.append("Tenis de mesa, ");
         }
         if (cbVolleyball.isChecked()){
-            deporteFavorito.append("Volleybal");
+            deporteFavorito.append("Volleybal, ");
         }
         if (deporteFavorito.length() > 0) {
             deporteFavorito.setLength(deporteFavorito.length() - 2);

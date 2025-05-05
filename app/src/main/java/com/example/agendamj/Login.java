@@ -1,7 +1,11 @@
 package com.example.agendamj;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Login extends AppCompatActivity {
     EditText edtUsuario, edtContraseña;
+    Button btLogin;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -23,15 +29,20 @@ public class Login extends AppCompatActivity {
         });
         edtUsuario = findViewById(R.id.edtUsuario);
         edtContraseña = findViewById(R.id.edtContraseña);
+        btLogin = findViewById(R.id.BTLOGIN);
+
     }
 
-    public void iniciarSesion(){
+    public void iniciarSesion(View view){
         String usuario = String.valueOf(edtUsuario.getText());
         String contraseña = edtContraseña.getText().toString();
-        if (usuario == "admin"){
-            if (contraseña == "admin"){
-
+        if (usuario.equals("admin")){
+            if (contraseña.equals("admin")){
+                Intent intentologin = new Intent(this, MainActivity.class);
+                startActivity(intentologin);
             }
+        }else {
+            Toast.makeText(this, "USUARIO INCORRECTO", Toast.LENGTH_LONG).show();
         }
     }
 }

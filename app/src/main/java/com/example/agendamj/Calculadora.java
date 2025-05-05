@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Calculadora extends AppCompatActivity {
-    TextView textResultado, textOperacion;
+    TextView textResultado, textOperacion, tvHistorial;
     String operacion = "";
     double numero1 = 0 , numero2 = 0;
     boolean validadorNumero= false;
@@ -28,6 +28,7 @@ public class Calculadora extends AppCompatActivity {
         });
         textResultado = findViewById(R.id.TextResult);
         textOperacion = findViewById(R.id.textOperacion);
+        tvHistorial = findViewById(R.id.tvHistorial);
     }
 
     public void asignarNumero (View view){
@@ -37,6 +38,15 @@ public class Calculadora extends AppCompatActivity {
         }
         Button botonPresionado = (Button) view;
         String numero = botonPresionado.getText().toString();
+        String numeroActual = textResultado.getText().toString();
+        if (numero.equals(".")){
+            if (numeroActual.endsWith(".") || numeroActual.contains(".")){
+                return;
+            }
+        if (numeroActual.isEmpty()){
+            textResultado.setText("0");
+        }
+        }
         textResultado.append(numero);
     }
 
@@ -72,13 +82,15 @@ public class Calculadora extends AppCompatActivity {
         }
         String num1Str = (numero1 % 1 == 0) ? String.valueOf((int) numero1) : String.valueOf(numero1);
         String num2Str = (numero2 % 1 == 0) ? String.valueOf((int) numero2) : String.valueOf(numero2);
+        String resultadoStr = (resultadoOperacion % 1 == 0) ? String.valueOf((int) resultadoOperacion) : String.valueOf(resultadoOperacion);
 
         textOperacion.setText(num1Str + " " + operacion + " " + num2Str + " =");
-        if (resultadoOperacion % 1 == 0) {
-            textResultado.setText(String.valueOf((int) resultadoOperacion));
-        } else {
-            textResultado.setText(String.valueOf(resultadoOperacion));
-        }
+
+        textResultado.setText(resultadoStr);
+
+        String historialActual = tvHistorial.getText().toString();
+        String nuevaLinea = num1Str + " " + operacion + " " + num2Str + " = " + resultadoStr;
+        tvHistorial.setText(nuevaLinea + "\n" + historialActual);
         validadorNumero = true;
     }
 

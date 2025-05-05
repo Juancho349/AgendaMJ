@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     tools:context=".Calculadora">
+
     <TextView
         android:id="@+id/textOperacion"
         android:layout_width="wrap_content"
@@ -257,4 +258,13 @@
         android:textColor="#FF9800"
         app:layout_constraintBottom_toTopOf="@+id/Bt4"
         app:layout_constraintEnd_toEndOf="@+id/Bt4" />
+
+    <TextView
+        android:id="@+id/tvHistorial"
+        android:layout_width="122dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

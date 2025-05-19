@@ -8,6 +8,19 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/bt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:backgroundTint="#233B94"
+        android:onClick="usarCalculadora"
+        android:text="Peliculas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btListado" />
+
+    <Button
         android:id="@+id/bt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="19dp"
         android:backgroundTint="#233B94"
         android:onClick="usarCalculadora"
         android:text="Calculadora"
@@ -64,11 +77,10 @@
         android:id="@+id/btListado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="19dp"
         android:backgroundTint="#233B94"
         android:text="Listado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bt3"
+        app:layout_constraintBottom_toTopOf="@+id/bt5"
+        app:layout_constraintStart_toStartOf="@+id/bt5"
         app:layout_constraintTop_toBottomOf="@+id/bt3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

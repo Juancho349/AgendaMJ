@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt1Agregar, bt2Modificar, bt3Calculadora, btListar;
+    Button bt1Agregar, bt2Modificar, bt3Calculadora, btListar, btPeliculas;
     private static final int REQUEST_CODE_FORMULARIO = 1;
     private static final int REQUEST_CODE_MODIFICAR_USUARIO = 2;
     AdministradorSQLiteOpenHelper dbAdmin;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         bt2Modificar = findViewById(R.id.bt2);
         bt3Calculadora = findViewById(R.id.bt3);
         btListar = findViewById(R.id.btListado);
+        btPeliculas = findViewById(R.id.bt5);
 
         bt1Agregar.setOnClickListener(v -> {
             Intent intento1 = new Intent(this, formulario.class);
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intento2 = new Intent(this, Buscar.class);
             intento2.putExtra("ArrayUsuarios", usuarios);
             startActivityForResult(intento2, REQUEST_CODE_MODIFICAR_USUARIO);
-
         });
 
         btListar.setOnClickListener(v -> {
@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intento4);
         });
 
+        btPeliculas.setOnClickListener(v -> {
+            Intent intento5 = new Intent(this, ModulePeliculas.class);
+            startActivityForResult(intento5, REQUEST_CODE_FORMULARIO);
+        });
         dbAdmin = new AdministradorSQLiteOpenHelper(this, "agenda", null, 1);
     }
 
